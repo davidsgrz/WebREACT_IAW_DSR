@@ -16,8 +16,8 @@
 }
 
 /* ===== CARDS ===== */
-.info-card {
-  border-left: 6px solid var(--accent, #198754); /* color por props */
+.card.info-card {
+  border-left: 6px solid var(--accent) !important;
 }
 .info-card .card-img-top {
   height: 160px;

@@ -91,15 +91,20 @@ const TopNav: React.FC = () => (
 )
 
 // Card individual (recibe props)
-const InfoCard: React.FC<CardInfo> = ({ title, text, img, accent }) => (
-  <Card className="h-100 info-card" style={{ ["--accent" as any]: accent }}>
-    <Card.Img variant="top" src={img} alt={title} />
-    <Card.Body>
-      <Card.Title>{title}</Card.Title>
-      <Card.Text>{text}</Card.Text>
-    </Card.Body>
-  </Card>
-)
+const InfoCard: React.FC<CardInfo> = ({ title, text, img, accent }) => {
+
+  const cardStyle = ({ ['--accent']: accent } as unknown) as React.CSSProperties;
+
+  return (
+    <Card className="h-100 info-card" style={cardStyle}>
+      <Card.Img variant="top" src={img} alt={title} />
+      <Card.Body>
+        <Card.Title>{title}</Card.Title>
+        <Card.Text>{text}</Card.Text>
+      </Card.Body>
+    </Card>
+  );
+};
 
 // Galería de imágenes locales
 const Gallery: React.FC = () => (
@@ -129,7 +134,7 @@ const Aside: React.FC = () => (
       <iframe
         width="100%"
         height="200"
-        src="https://www.youtube.com/embed/tgbNymZ7vqY"
+        src="https://www.youtube.com/embed/hQOMyamdPfk?rel=0"
         title="Vídeo de YouTube"
         allowFullScreen
       />
@@ -146,7 +151,6 @@ const Footer: React.FC = () => (
       <a href="https://instagram.com" aria-label="Instagram"><FaInstagram /></a>
       <a href="https://youtube.com" aria-label="YouTube"><FaYoutube /></a>
     </div>
-    <small><a href="https://www.iestu-centro.es" target="_blank">IES Tu Centro</a></small>
   </footer>
 )
 
