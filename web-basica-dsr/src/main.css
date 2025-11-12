@@ -1,0 +1,26 @@
+/* main.css — base limpia para Bootstrap */
+
+/* Tipografía base (opcional) */
+:root {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* IMPORTANTE: no centres toda la app */
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;              /* para sticky footer */
+  flex-direction: column;     /* el footer queda al final */
+  background: #fff;
+  color: #212529;             /* color de texto Bootstrap */
+}
+
+/* Deja que Bootstrap maneje los estilos de enlaces y botones */
+a { text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Para que el contenido ocupe el alto disponible (sticky footer) */
+#root { flex: 1; }
