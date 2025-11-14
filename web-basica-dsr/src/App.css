@@ -24,11 +24,31 @@
   object-fit: cover; /* evita que se deforme la imagen */
 }
 
-/* ===== GALERÍA ===== */
-.gallery-img {
+/* ===== GALERÍA -modo carrousel ===== */
+/* ===== GALERÍA COMO CARRUSEL ===== */
+
+.gallery-container {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Evita cortes y mejora la visualización */
+.gallery-carousel-img {
   width: 100%;
-  border-radius: 8px;
-  display: block;
+  max-height: 300px;
+  object-fit: contain;
+  background: #f0f0f0;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* Estilo del texto sobre la imagen */
+.gallery-caption {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 1rem;
+  bottom: 10px;
 }
 
 /* ===== ASIDE ===== */
