@@ -14,6 +14,15 @@ import festlenguas from './assets/img/Festival-lenguas.jpg'
 import pterror from './assets/img/Pasaje-del-terror.jpg'
 import medio from './assets/img/medio-ambiente.jpg'
 
+
+const galleryImages = [
+  { src: bullying, title: "Campaña contra el Bullying" },
+  { src: festlenguas, title: "Festival de las Lenguas" },
+  { src: pterror, title: "Pasaje del Terror" },
+  { src: medio, title: "Día del Medio Ambiente" },
+];
+
+
 /* ===============================
    DATOS PARA LAS CARDS
 ================================ */
@@ -107,19 +116,27 @@ const InfoCard: React.FC<CardInfo> = ({ title, text, img, accent }) => {
 };
 
 // Galería de imágenes locales
+import { Carousel } from "react-bootstrap";
+
 const Gallery: React.FC = () => (
-  <Row xs={2} md={4} className="g-2 mt-2">
-    {[bullying, festlenguas, pterror, medio].map((img, i) => (
-      <Col key={i}>
-        <img
-          src={img}
-          alt={`Foto ${i + 1}`}
-          className="gallery-img"
-        />
-      </Col>
-    ))}
-  </Row>
-)
+  <div className="gallery-container mt-3">
+    <Carousel>
+      {galleryImages.map((img, i) => (
+        <Carousel.Item key={i}>
+          <img
+            className="gallery-carousel-img d-block w-100"
+            src={img.src}
+            alt={img.title}
+          />
+          <Carousel.Caption className="gallery-caption">
+            <p>{img.title}</p>
+          </Carousel.Caption>
+        </Carousel.Item>
+      ))}
+    </Carousel>
+  </div>
+);
+
 
 // Aside con Autocomplete y vídeo
 const Aside: React.FC = () => (
